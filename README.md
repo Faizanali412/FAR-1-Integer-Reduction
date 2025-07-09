@@ -1,128 +1,107 @@
-# 🚀 FAR-1 Integer Reduction
+# FAR-1: Faizan Ali Reduction — A Fast Integer Reduction Algorithm
 
-**FAR-1 (Faizan Ali Reduction - Version 1)** is a novel integer reduction algorithm that significantly outperforms the traditional **Collatz** and **Half-Collatz** functions in over **93%** of cases. This repository includes the full research paper, Python source code, step analysis, CSV datasets, and graph visualizations.
+A novel integer reduction method that outperforms both Collatz and Half-Collatz algorithms in over **95% of cases** from `n = 1` to `100,000,000`.
 
 ---
 
-## 🔢 Algorithm Overview
+## Algorithm Description
 
-### ✅ FAR-1 Logic
-
+### FAR-1 Logic
 ```python
-if n % 3 == 0:
-    n = n / 3
-else:
-    n = n - 1
+while n != 1:
+    if n % 3 == 0:
+        n = n // 3
+    else:
+        n -= 1
 ```
 
-### 🔄 Compared Against:
+### Compared Against
 
-**Half-Collatz**
+**Half-Collatz:**
 ```python
-if n % 2 == 0:
-    n = n / 2
-else:
-    n = n + 1
+while n != 1:
+    if n % 2 == 0:
+        n = n // 2
+    else:
+        n += 1
 ```
 
-**Classic Collatz**
+**Classic Collatz:**
 ```python
-if n % 2 == 0:
-    n = n / 2
-else:
-    n = 3 * n + 1
+while n != 1:
+    if n % 2 == 0:
+        n = n // 2
+    else:
+        n = 3 * n + 1
 ```
 
 ---
 
-## 📊 Benchmark Results (n = 1 to 10,000,000)
+## Summary Results (n = 1 to 100,000,000)
 
-| Algorithm        | Average Steps | % Faster Cases |
-|------------------|----------------|----------------|
-| **FAR-1**         | 26.74          | 93.92%         |
-| **Half-Collatz**  | 33.20          | 3.47%          |
-| **Collatz**       | 155.27         | 0%             |
+- **FAR-1 faster:** 95,382,954 numbers (95.38%)
+- **Equal steps:** 1,983,893 numbers (1.98%)
+- **Half-Collatz faster:** 2,633,153 numbers (2.63%)
 
-- ⚡ **FAR-1 faster** in: 9,391,611 cases  
-- 🤝 **Equal steps** in: 261,205 cases  
-- 🟢 **Half-Collatz faster** in: 347,184 cases  
-- 📈 **Max lead of FAR-1:** 25 steps  
-- ⚠️ **Max lead of Half-Collatz:** 12 steps (only in 1 case)
+### Average Steps:
+- **FAR-1:** 30.91
+- **Half-Collatz:** 38.17
+- **Collatz:** 179.23
 
 ---
 
-## 📂 Included Files
+## How to Run
 
-| File Name                            | Description                                  |
-|-------------------------------------|----------------------------------------------|
-| `FAR1_Paper_FaizanAli_tex.pdf`      | 📄 Full research paper (LaTeX exported PDF)   |
-| `far1_vs_collatz_halfcollatz_analysis.py` | 🔬 Main test script for graph and summary     |
-| `far1_results_graph.png`            | 📊 Line graph comparing average steps         |
-| `analyze_far1_results.py`           | 📈 Script to summarize all performance stats  |
-| `far1_vs_collatz_10M_split.py`      | 📁 Chunked CSV generator for large dataset    |
-| `far1_results_part1-4.csv.zip`      | 📦 Dataset of 10 million numbers split in 4   |
-| `README.md`                         | 🧾 This README documentation                  |
+### Requirements
+- Python 3.8+
+- pandas
+- matplotlib
 
----
-
-## 🧪 How to Run
-
-### 🛠 Requirements
-
+### Install dependencies
 ```bash
 pip install pandas matplotlib
 ```
 
-### ▶️ Run the Main Script
-
+### Run comparison code (for 100 million integers)
 ```bash
 python3 far1_vs_collatz_halfcollatz_analysis.py
 ```
 
-### 📁 Output
-
-- ✅ CSV: `far1_vs_collatz_1M.csv`
-- 🖼 PNG Graph: `far1_results_graph.png`
-
----
-
-## 📈 Performance Highlights
-
-- FAR-1 is significantly smoother and faster than Collatz.
-- Reduces computation steps by using simple math (`/3` or `-1`).
-- Proven effective across 10 million integers.
+### Outputs
+- `far1_summary_100M.csv` — step results summary
+- `far1_vs_collatz_halfcollatz_100M_graph.png` — graph comparison of average steps
 
 ---
 
-## 📘 License
+## 📁 Files Included
 
-This project is licensed under:
+- `far1_vs_collatz_halfcollatz_analysis.py` — Main test script
+- `far1_results_part1.csv.zip` to `part4` — Full test data for 10M chunks
+- `far1_results_graph.png` — Visualization of average step count
+- `FAR1_Paper_FaizanAli_tex.pdf` — Formal research paper
+- `README.md` — You’re reading it!
+- `LICENSE` — CC0 1.0 Universal License (Public Domain)
 
-```text
-Creative Commons Zero v1.0 Universal (CC0 1.0)
+---
+
+## 📌 Citation
+
+If you use this work, please cite:
+```
+Faizan Ali. "FAR-1: A Fast Integer Reduction Method Compared to Collatz and Half-Collatz." 2025. https://doi.org/10.5281/zenodo.15849781
 ```
 
-You can copy, modify, distribute, and use it without asking for permission.  
-See [`LICENSE`](LICENSE) file for full terms.
+---
+
+## 🌐 Links
+
+- GitHub: [FAR-1 Repository](https://github.com/Faizanali412/FAR-1-Integer-Reduction)
+- Zenodo DOI: [10.5281/zenodo.15849781](https://doi.org/10.5281/zenodo.15849781)
 
 ---
 
-## 📬 Author
+## Author
 
 **Faizan Ali**  
-Creator of FAR-1 Algorithm  
-GitHub: [@Faizanali412](https://github.com/Faizanali412)
-Citation: https://doi.org/10.5281/zenodo.15849781
-
-
----
-
-##  Citation
-
-Zenodo: https://doi.org/10.5281/zenodo.15849781
-
----
-
-## 🌐 GitHub Repository
-
-📍 [https://github.com/Faizanali412/FAR-1-Integer-Reduction](https://github.com/Faizanali412/FAR-1-Integer-Reduction)
+Inventor of FAR-1  
+[LinkedIn](https://www.linkedin.com/in/faizan-ali-a32052149/) | [GitHub](https://github.com/Faizanali412)
