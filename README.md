@@ -112,13 +112,14 @@ See [`LICENSE`](LICENSE) file for full terms.
 **Faizan Ali**  
 Creator of FAR-1 Algorithm  
 GitHub: [@Faizanali412](https://github.com/Faizanali412)
+Citation: https://doi.org/10.5281/zenodo.15849781
+
 
 ---
 
-## 📌 Citation
+##  Citation
 
-📤 Submission to arXiv.org pending approval.  
-Citation info will be added here once published.
+Zenodo: https://doi.org/10.5281/zenodo.15849781
 
 ---
 
